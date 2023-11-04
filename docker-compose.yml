@@ -1,0 +1,17 @@
+---
+version: '3'
+
+services:
+  llama-cpp-python:
+    container_name: llama-cpp-python
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dceoy/llama-cpp-python:latest
+    volumes:
+      - ${PWD}:/wd
+    working_dir: /wd
+    entrypoint:
+      - /wd/chat.sh
+    command:
+      - 'Name the planets in the solar system?'
