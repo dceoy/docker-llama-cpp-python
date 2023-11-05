@@ -17,15 +17,17 @@ $ docker image pull dceoy/llama-cpp-python
 Usage
 -----
 
-Run llama-cpp-python
+Test the package.
 
 ```sh
-$ docker container run --rm -p 7860:7860 -v ${PWD}:/wd -w /wd \
-    dceoy/llama-cpp-python run.py
+$ docker container run --rm dceoy/llama-cpp-python
 ```
 
-Run llama-cpp-python with docker-compose
+Test text generation.
 
 ```sh
-$ docker-compose -f /path/to/docker-llama-cpp-python/docker-compose.yml up
+$ docker container run \
+    --rm --entrypoint /wd/chat.sh -v "${PWD}:/wd" -w /wd \
+    dceoy/llama-cpp-python \
+    'Name the planets in the solar system?'
 ```
