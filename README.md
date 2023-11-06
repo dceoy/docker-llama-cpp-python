@@ -29,5 +29,5 @@ Test text generation.
 $ docker container run \
     --rm --entrypoint /wd/chat.sh -v "${PWD}:/wd" -w /wd \
     dceoy/llama-cpp-python \
-    'Name the planets in the solar system?'
+    'Q: Name the planets in the solar system?' 'A: '
 ```

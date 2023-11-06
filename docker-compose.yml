@@ -14,4 +14,5 @@ services:
     entrypoint:
       - /wd/chat.sh
     command:
-      - 'Name the planets in the solar system?'
+      - 'Q: Name the planets in the solar system?'
+      - 'A: '
