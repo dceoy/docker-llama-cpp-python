@@ -20,8 +20,7 @@ RUN set -e \
 RUN set -e \
       && /usr/bin/python3 /tmp/get-pip.py \
       && pip install -U --no-cache-dir pip \
-      && CMAKE_ARGS='-DLLAMA_CUBLAS=on' FORCE_CMAKE=1 \
-        pip install -U --no-cache-dir llama-cpp-python
+      && pip install -U --no-cache-dir llama-cpp-python
 
 ENTRYPOINT ["/usr/bin/python"]
 CMD ["-c", "import llama_cpp; print(llama_cpp.__version__);"]
